@@ -9,6 +9,7 @@ import java.util.List;
 
 public final class DataRepository {
     private static DataRepository instance;
+    private List<Category> categories = new ArrayList<>();
 
     private DataRepository(){}
 
@@ -20,7 +21,7 @@ public final class DataRepository {
     }
 
     public List<Category> getAllCategories() {
-        List<Category> categories = new ArrayList<>();
+
         Category category = new Category();
         category.setTitle("Work");
         categories.add(category);
@@ -28,5 +29,11 @@ public final class DataRepository {
         category.setTitle("Life");
         categories.add(category);
         return categories;
+    }
+
+    public void addCategory(String title) {
+        Category category = new Category();
+        category.setTitle(title);
+        categories.add(category);
     }
 }

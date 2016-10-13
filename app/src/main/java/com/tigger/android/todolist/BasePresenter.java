@@ -5,4 +5,5 @@ package com.tigger.android.todolist;
  */
 
 public interface BasePresenter {
+    void start();
 }

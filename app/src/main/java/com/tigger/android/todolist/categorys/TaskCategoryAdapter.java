@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.tigger.android.todolist.BasePresenter;
 import com.tigger.android.todolist.data.Category;
 import com.tigger.android.todolist.data.DataRepository;
 
@@ -17,13 +18,10 @@ import java.util.List;
  */
 
 public class TaskCategoryAdapter extends RecyclerView.Adapter<TaskCategoryAdapter.ViewHolder> {
-    private DataRepository mDataRepository;
     private List<Category> categories;
     private Context context;
 
     public TaskCategoryAdapter(Context context) {
-        mDataRepository = DataRepository.getInstance();
-        categories = mDataRepository.getAllCategories();
         this.context = context;
     }
 
@@ -32,6 +30,11 @@ public class TaskCategoryAdapter extends RecyclerView.Adapter<TaskCategoryAdapte
         LayoutInflater inflater = LayoutInflater.from(context);
         View view = inflater.inflate(android.R.layout.simple_list_item_1, parent, false);
         return new ViewHolder(view);
+    }
+
+    public void setCategories(List<Category> categories) {
+        this.categories = categories;
+        this.notifyDataSetChanged();
     }
 
     @Override
