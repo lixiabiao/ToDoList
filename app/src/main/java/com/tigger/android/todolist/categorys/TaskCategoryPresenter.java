@@ -1,6 +1,5 @@
 package com.tigger.android.todolist.categorys;
 
-import com.tigger.android.todolist.BasePresenter;
 import com.tigger.android.todolist.data.Category;
 import com.tigger.android.todolist.data.DataRepository;
 

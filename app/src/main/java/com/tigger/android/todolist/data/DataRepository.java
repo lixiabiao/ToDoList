@@ -10,6 +10,7 @@ import java.util.List;
 public final class DataRepository {
     private static DataRepository instance;
     private List<Category> categories = new ArrayList<>();
+    private List<Task> tasks = new ArrayList<>();
 
     private DataRepository(){}
 
@@ -31,9 +32,21 @@ public final class DataRepository {
         return categories;
     }
 
-    public void addCategory(String title) {
-        Category category = new Category();
-        category.setTitle(title);
+    public void addCategory(Category category) {
         categories.add(category);
+    }
+
+    public List<Task> getAllTasks() {
+        tasks.clear();
+        Task task = new Task();
+        task.setTitle("go home");
+        tasks.add(task);
+        task = new Task();
+        task.setTitle("go to bed");
+        tasks.add(task);
+        return tasks;
+    }
+    public void addTask(Task task) {
+        tasks.add(task);
     }
 }

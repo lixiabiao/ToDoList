@@ -7,16 +7,14 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.tigger.android.todolist.BasePresenter;
-import com.tigger.android.todolist.BaseView;
 import com.tigger.android.todolist.R;
 import com.tigger.android.todolist.addcategory.AddCategoryActivity;
 import com.tigger.android.todolist.data.Category;
+import com.tigger.android.todolist.tasks.TaskItemsActivity;
 
 import java.util.List;
 
@@ -34,7 +32,7 @@ public class TaskCategoryFragment extends Fragment implements TaskCategoryContra
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(final LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_task_category, container, false);
         taskCategoryRecyclerView = (RecyclerView) view.findViewById(R.id.task_catetory_recycler_view);
